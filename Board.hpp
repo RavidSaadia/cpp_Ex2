@@ -15,12 +15,14 @@ namespace ariel {
 
     public:
 
-        void post(int row, int colum, ariel::Direction direction, const char string[5]);
+    void post(unsigned int row, unsigned int colum, ariel::Direction direction, const char string[5]);
 
-        string read(int row, int colum, ariel::Direction direction, int length);
+    string read(unsigned int row, unsigned int colum, ariel::Direction direction, int length);
 
-        void show();
+    void show();
     };
-}
+
+
+    }
 
 #endif //EX2_BOARD_H

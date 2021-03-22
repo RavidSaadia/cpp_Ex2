@@ -7,15 +7,14 @@
 #include "Direction.hpp"
 using namespace std;
 using namespace ariel;
-//        void post (int row, int colum, ariel::Direction direction, const char string[5]);
 
 
 
-void Board::post(int row, int colum, ariel::Direction direction, const char *string) {
+void Board::post(unsigned int row,unsigned int colum, ariel::Direction direction, const char *string) {
 
 }
 
-string Board::read(int row, int colum, ariel::Direction direction, int length) {
+string Board::read(unsigned int row, unsigned int colum, ariel::Direction direction, int length) {
 
     return "";
 }
