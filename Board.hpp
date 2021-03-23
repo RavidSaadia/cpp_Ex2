@@ -4,25 +4,32 @@
 
 #ifndef EX2_BOARD_H
 #define EX2_BOARD_H
+
+#include <map>
+#include <vector>
 #include "string"
 #include "Direction.hpp"
-using namespace std;
+
 namespace ariel {
 
 
-
     class Board {
+    private:
+
+//        std::map<std::map<int,int>,char> v;
+        std::vector<std::vector<char>> v;
 
     public:
+        Board(){};//constructor
 
-    void post(unsigned int row, unsigned int colum, ariel::Direction direction, const char string[5]);
+        void post(unsigned int row, unsigned int colum, ariel::Direction direction,  std::string s);
 
-    string read(unsigned int row, unsigned int colum, ariel::Direction direction, int length);
+        std::string read(unsigned int row, unsigned int colum, ariel::Direction direction, int length);
 
-    void show();
+        void show();
     };
 
 
-    }
+}
 
 #endif //EX2_BOARD_H

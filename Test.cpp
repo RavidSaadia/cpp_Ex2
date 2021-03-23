@@ -8,8 +8,8 @@
 
 using namespace ariel;
 using namespace std;
-Direction anahi = ariel::Direction::Vertical;
-Direction ofki = ariel::Direction::Horizontal;
+const Direction anahi = ariel::Direction::Vertical;
+const Direction ofki = ariel::Direction::Horizontal;
 Board b;
 TEST_CASE ("post and read") {
     b.post(0, 0, ofki, "hello");// hello___

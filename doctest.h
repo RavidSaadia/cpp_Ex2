@@ -2794,9 +2794,9 @@ bool is_running_in_test = false;
 namespace {
     using namespace detail;
     // case insensitive strcmp
-    int stricmp(const char* a, const char* b) {
-        for(;; a++, b++) {
-            const int d = tolower(*a) - tolower(*b);
+    int stricmp(const char* a, const char* v) {
+        for(;; a++, v++) {
+            const int d = tolower(*a) - tolower(*v);
             if(d != 0 || !*a)
                 return d;
         }
