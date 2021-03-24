@@ -24,7 +24,7 @@ namespace ariel {
 
         void post(unsigned int row, unsigned int colum, ariel::Direction direction,  std::string s);
 
-        std::string read(unsigned int row, unsigned int colum, ariel::Direction direction, int length);
+        std::string read(unsigned int row, unsigned int colum, ariel::Direction direction, unsigned int length);
 
         void show();
     };

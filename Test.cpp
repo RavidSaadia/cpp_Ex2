@@ -8,13 +8,14 @@
 
 using namespace ariel;
 using namespace std;
-const Direction anahi = ariel::Direction::Vertical;
-const Direction ofki = ariel::Direction::Horizontal;
+const Direction anahi = Direction::Vertical;
+const Direction ofki = Direction::Horizontal;
 Board b;
+//unsigned int five = 5;
 TEST_CASE ("post and read") {
     b.post(0, 0, ofki, "hello");// hello___
     //                                           // _______
-            CHECK(b.read(0, 0, ofki, 5) == "hello");
+            CHECK(b.read(0, 0, ofki, (unsigned int)5) == "hello");
             CHECK(b.read(0, 0, anahi, 5) == "h____");
     b.post(0, 2, anahi, "world");
     b.post(4, 1, ofki, "sdon");  // hewlo

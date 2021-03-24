@@ -2,7 +2,6 @@
 // Created by ravid on 17/03/2021.
 //
 
-#include <cstring>
 #include <iostream>
 #include "Board.hpp"
 #include "string"
@@ -10,8 +9,8 @@
 
 using namespace std;
 using namespace ariel;
-const Direction anahi = ariel::Direction::Vertical;
-const Direction ofki = ariel::Direction::Horizontal;
+const Direction anahi = Direction::Vertical;
+const Direction ofki = Direction::Horizontal;
 
 void Board::post(unsigned int row, unsigned int colum, ariel::Direction direction, string s) {
 
@@ -23,7 +22,6 @@ void Board::post(unsigned int row, unsigned int colum, ariel::Direction directio
         v.at(row).push_back('_');
 
     }
-
     if (direction == ofki) {
         for (unsigned int i = 0; i < s.length(); ++i) {
             v.at(row).at(colum + i) = s.at(i);
@@ -40,25 +38,33 @@ void Board::post(unsigned int row, unsigned int colum, ariel::Direction directio
 
 }
 
-string Board::read(unsigned int row, unsigned int colum, ariel::Direction direction, int length) {
-    string ans ="";
+string Board::read(unsigned int row, unsigned int colum, ariel::Direction direction, unsigned int length) {
+    string ans;
+
 
     while (v.size() < row + length) {
-        v.emplace_back('_'); // insted ==>  v.push_back(vector<char>('_'));
-    }
 
+        v.push_back(std::vector<char>('_'));
+    }
     while (v.at(row).size() < colum + length) {
         v.at(row).push_back('_');
 
     }
-    if (direction == ofki) {
+    if (direction == anahi) {
         for (unsigned int i = 0; i < length; ++i) {
-            ans += v.at(row).at(colum++);
+            while (v.at(row+i).size() < colum + length) {
+                v.at(row+i).push_back('_');
 
+            }
         }
-    } else if (direction == anahi) {
         for (unsigned int i = 0; i < length; ++i) {
             ans += v.at(row++).at(colum);
+
+        }
+
+    } else if (direction == ofki) {
+        for (unsigned int i = 0; i < length; ++i) {
+            ans += v.at(row).at(colum++);
 
         }
     } else {
