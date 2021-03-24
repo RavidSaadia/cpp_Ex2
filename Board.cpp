@@ -70,7 +70,7 @@ string Board::read(unsigned int row, unsigned int colum, ariel::Direction direct
     } else {
         cout << "no direction!";
     }
-    cout << ans << endl;
+//    cout << ans << endl; // for checking
     return ans;
 }
 
