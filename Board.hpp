@@ -20,13 +20,16 @@ namespace ariel {
         std::vector<std::vector<char>> v;
 
     public:
-        Board(){};//constructor
+        Board();//constructor
 
         void post(unsigned int row, unsigned int colum, ariel::Direction direction,  std::string s);
 
         std::string read(unsigned int row, unsigned int colum, ariel::Direction direction, unsigned int length);
 
         void show();
+        ~Board();
+
+        Board(int i);
     };
 
 
