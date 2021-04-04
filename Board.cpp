@@ -21,7 +21,7 @@ ariel::Board::Board() {
 void Board::post(unsigned int row, unsigned int colum, ariel::Direction direction, string s) {
 
     while (v.size() < row + s.length()) {
-        v.push_back(vector<char>());// insted ==>  v.push_back(vector<char>('_'));
+        v.emplace_back();// insted ==>  v.push_back(vector<char>('_'));
     }
     for (unsigned int i = 0; i < row + s.length(); ++i) {
         while (v.at(i).size() < colum + s.length()) {
@@ -55,7 +55,7 @@ string Board::read(unsigned int row, unsigned int colum, ariel::Direction direct
 
     while (v.size() < row + length) {
 
-        v.push_back(std::vector<char>('_'));
+        v.emplace_back(0);// insted ==>        v.push_back(std::vector<char>(0));
     }
     while (v.at(row).size() < colum + length) {
         v.at(row).push_back('_');
