@@ -13,7 +13,7 @@ const Direction anahi = Direction::Vertical;
 const Direction ofki = Direction::Horizontal;
 
 ariel::Board::Board() {
-    this->v = std::vector<std::vector<char>>('_');
+    this->v = std::vector<std::vector<char>>(0);
 
 }
 
